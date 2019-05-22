@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "google-fonts-webpack-plugin": "^0.4.4",
     "vue": "^2.6.10"
   },
   "devDependencies": {
