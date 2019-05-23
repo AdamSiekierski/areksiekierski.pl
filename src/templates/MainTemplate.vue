@@ -1,16 +1,16 @@
 <template>
   <div id="main">
-    <Header />
+    <navigation />
     <slot></slot>
   </div>
 </template>
 <script>
-import Header from './Header.vue';
+import Nav from './Nav.vue';
 
 export default {
   name: 'main-template',
   components: {
-    Header: Header,
+    navigation: Nav,
   },
 };
 </script>

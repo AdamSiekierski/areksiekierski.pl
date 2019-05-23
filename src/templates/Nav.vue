@@ -1,15 +1,15 @@
 <template>
-  <div id="headerWrapper">
+  <div id="navWrapper">
     <h2>I'm header</h2>
   </div>
 </template>
 <script>
 export default {
-  name: 'Header',
+  name: 'Nav',
 };
 </script>
 <style lang="scss" scoped>
-#headerWrapper {
+#navWrapper {
   position: fixed;
   height: 100px;
 }
