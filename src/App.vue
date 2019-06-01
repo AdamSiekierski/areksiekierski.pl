@@ -1,6 +1,7 @@
 <template>
   <main-template>
     <hero />
+    <div style="height: 3000px; background-color: #fafafa;"></div>
   </main-template>
 </template>
 <script>
