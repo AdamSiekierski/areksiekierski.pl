@@ -1,5 +1,5 @@
 <template>
-  <div id="heroWrapper">
+  <div id="hero">
     <div id="titleWrapper">
       <h1>
         Usługi <br />
@@ -20,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/styles/Theme.scss";
 
-#heroWrapper {
+#hero {
   height: 100vh;
   width: 100%;
   display: flex;

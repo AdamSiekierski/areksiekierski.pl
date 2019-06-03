@@ -30,7 +30,7 @@ export default {
 
   .icon {
     height: 30px;
-    fill: $blue-darker;
+    fill: $blue-lighter;
   }
 
   &:hover {

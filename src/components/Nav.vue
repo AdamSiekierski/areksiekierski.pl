@@ -1,5 +1,5 @@
 <template>
-  <div id="navWrapper" :style='{ backgroundColor: this.changedBackground ? "#1f2a36" : "unset" }'>
+  <div id="nav">
     <div id="navImageWrapper" class="navHalf">
       <img src="../assets/images/logo.png"
            id="navImage"
@@ -17,7 +17,6 @@
   </div>
 </template>
 <script>
-import debounce from 'lodash.debounce';
 import Hamburger from './Hamburger.vue';
 
 export default {
@@ -29,47 +28,29 @@ export default {
 
   data() {
     return {
-      changedBackground: false,
       isMenuOpened: false,
     };
   },
 
   methods: {
-    handleScroll() {
-      const scrollPos = window.scrollY;
-      if (scrollPos > 50 && !this.changedBackground) {
-        this.changedBackground = true;
-      } else if (!(scrollPos > 50) && this.changedBackground) {
-        this.changedBackground = false;
-      }
-    },
     hamburgerHandler(e) {
       this.isMenuOpened = e === 'open';
     },
-  },
-
-  created() {
-    window.addEventListener('scroll', debounce(this.handleScroll, 10));
-  },
-
-  destroyed() {
-    window.removeEventListener('scroll', debounce(this.handleScroll, 10));
   },
 };
 </script>
 <style lang="scss" scoped>
 @import "../assets/styles/Theme";
 
-#navWrapper {
-  position: fixed;
+#nav {
+  position: absolute;
   height: 100px;
-  width: 100vw;
+  width: 100%;
   padding: 5px;
   display: flex;
   justify-content: space-between;
   font-size: 1.5em;
   color: $white;
-  transition: all 0.2s ease-in-out;
   opacity: 0.99;
   z-index: 2;
 
@@ -111,13 +92,11 @@ export default {
     margin-right: 10px;
   }
 
-  @media #{$mq-small} {
-    #navImage {
-      background-color: transparent;
-    }
-  }
-
   @media #{$mq-mobile} {
+    opacity: 1;
+    position: fixed;
+    background-color: $blue-darker;
+
     .navLinksWrapper {
       position: fixed;
       background-color: $blue;
@@ -131,6 +110,7 @@ export default {
       font-size: 1.3em;
       transform: translateX(100%);
       transition: all 0.3s;
+      opacity: 0.98;
     }
 
     .navLinksOpened {
