@@ -99,7 +99,7 @@ export default {
 
     .navLinksWrapper {
       position: fixed;
-      background-color: $blue;
+      background-color: $green-lighter;
       width: 100%;
       height: 100%;
       top: 0;

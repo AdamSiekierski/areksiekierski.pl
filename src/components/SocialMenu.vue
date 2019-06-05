@@ -18,7 +18,7 @@ export default {
 #socialMenuWrapper {
   display: block;
   text-decoration: none;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   padding: 10px;
@@ -30,7 +30,7 @@ export default {
 
   .icon {
     height: 30px;
-    fill: $blue-lighter;
+    fill: $blue-darker;
   }
 
   &:hover {
