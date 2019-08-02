@@ -4,9 +4,25 @@
       <section-title theme="light">
         Oferta
       </section-title>
+      <p>
+        W usługach remontowych posiadam ponad 20 letnie doświadczenie. Wykonuję między innymi:
+      </p>
+      <ul>
+        <li>Malowanie wnętrz i elewacji</li>
+        <li>Szpachlowanie</li>
+        <li>Stiuki weneckie, imitacja betonu</li>
+        <li>Układanie paneli podłogowych (również winylowych)</li>
+        <li>Montaż listew przypodłogowych</li>
+        <li>Ogólne prace wykończeniowe</li>
+        <li>Małe zabudowy kartonowo-gipsowe</li>
+        <li>Żywice epoksydowe na posadzki betonowe,
+          malowanie posadzek betonowych, ochrona betonu
+        </li>
+        <li>Drobne usługi stolarskie</li>
+      </ul>
     </div>
     <div id="about-right" class="about-half">
-      <h1>hahah</h1>
+      hahah
     </div>
   </div>
 </template>
@@ -35,30 +51,36 @@ export default {
   }
 
   #about-left {
-    background-color: $blue-darker;
-    padding: 20px 20px 0 40px;
+    background-color: $blue;
+    padding: 20px 20px 20px 40px;
+    color: $white;
+    font-size: 1.6em;
   }
 
   #about-right {
     background-color: $white;
   }
 
+  ul {
+    margin-left: 20px;
+
+    li {
+      list-style-position: outside;
+    }
+  }
+
   @media #{$mq-small} {
     #about-left {
       background: $blue;
+      width: 100%;
+    }
+
+    #about-right {
+      display: none;
     }
   }
 
   @media #{$mq-mobile} {
-    #about-right {
-      display: none;
-    }
-
-    #about-left {
-      width: 100%;
-      background: $blue;
-    }
-
     background: $white;
     height: calc(100vh - 100px);
   }

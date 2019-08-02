@@ -6,8 +6,8 @@
            alt="Usługi Remontowe Arkadiusz Siekierski"/>
     </div>
     <div class="navLinksWrapper" :class="isMenuOpened && 'navLinksOpened'">
-      <a href="#">home</a>
-      <a href="#">oferta</a>
+      <a href="#" v-scroll-to="'#hero'">home</a>
+      <a href="#" v-scroll-to="'#about'">oferta</a>
       <a href="#">galeria</a>
       <a href="#">kontakt</a>
     </div>

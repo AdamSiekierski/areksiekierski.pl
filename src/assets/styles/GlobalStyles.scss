@@ -6,3 +6,8 @@
   margin: 0;
   padding: 0;
 }
+
+::selection {
+  background-color: $green-lighter;
+  color: $blue-darker;
+}

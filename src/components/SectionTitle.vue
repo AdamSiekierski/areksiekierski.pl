@@ -18,9 +18,10 @@ export default {
 @import '../assets/styles/Theme.scss';
 
 .sectionTitle {
-  font-size: 2em;
+  font-size: 2rem;
   position: relative;
   z-index: 1;
+  margin-bottom: 40px;
 
   &::before {
     content: '';

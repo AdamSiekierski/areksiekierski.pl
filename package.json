@@ -16,7 +16,8 @@
     "stylelint-scss": "^3.8.0",
     "stylelint-webpack-plugin": "^0.10.5",
     "vue": "^2.6.10",
-    "vue-media-queries": "^0.0.5"
+    "vue-media-queries": "^0.0.5",
+    "vue-scrollto": "^2.15.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",

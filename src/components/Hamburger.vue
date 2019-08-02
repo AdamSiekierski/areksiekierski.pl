@@ -1,6 +1,5 @@
 <template>
-  <button id="outerHamburger" @click="this.handleClick"> <!-- eslint-disable-line -->
-    <!--suppress HtmlUnknownTag -->
+  <button id="outerHamburger" @click="this.handleClick">
     <div id="hamburger" :style="this.isMenuOpened && {
       backgroundColor: `transparent`
     }">
