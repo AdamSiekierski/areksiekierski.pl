@@ -22,6 +22,7 @@ export default {
   position: relative;
   z-index: 1;
   margin-bottom: 40px;
+  margin-left: 20px;
 
   &::before {
     content: '';

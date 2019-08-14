@@ -7,8 +7,8 @@
     </div>
     <div class="navLinksWrapper" :class="isMenuOpened && 'navLinksOpened'">
       <a href="#" v-scroll-to="'#hero'">home</a>
-      <a href="#" v-scroll-to="'#about'">oferta</a>
-      <a href="#">galeria</a>
+      <a href="#" v-scroll-to="'#about-left'">oferta</a>
+      <a href="#" v-scroll-to="'#about-right'">galeria</a>
       <a href="#">kontakt</a>
     </div>
     <div id="hamburgerWrapper">

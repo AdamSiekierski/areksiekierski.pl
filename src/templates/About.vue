@@ -22,18 +22,21 @@
       </ul>
     </div>
     <div id="about-right" class="about-half">
-      hahah
+      <section-title theme="dark">Galeria prac</section-title>
+      <images />
     </div>
   </div>
 </template>
 <script>
 import SectionTitle from '../components/SectionTitle.vue';
+import Images from '../components/Images.vue';
 
 export default {
   name: 'about',
 
   components: {
     'section-title': SectionTitle,
+    'images': Images, //eslint-disable-line
   },
 };
 </script>
@@ -42,8 +45,8 @@ export default {
 
 #about {
   width: 100%;
-  height: 100vh;
   display: flex;
+  background: linear-gradient(90deg, $blue 50%, $white 50%);
 
   .about-half {
     width: 50%;
@@ -52,13 +55,14 @@ export default {
 
   #about-left {
     background-color: $blue;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 20px 20px 20px;
     color: $white;
     font-size: 1.6em;
   }
 
   #about-right {
     background-color: $white;
+    padding: 20px;
   }
 
   ul {
@@ -70,19 +74,20 @@ export default {
   }
 
   @media #{$mq-small} {
-    #about-left {
-      background: $blue;
-      width: 100%;
+    background: none;
+    display: block;
+
+    .about-half {
+      width: 100vw;
     }
 
-    #about-right {
-      display: none;
+    #about-left {
+      background: $blue;
     }
   }
 
   @media #{$mq-mobile} {
     background: $white;
-    height: calc(100vh - 100px);
   }
 }
 </style>
