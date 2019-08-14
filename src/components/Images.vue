@@ -14,7 +14,7 @@ export default {
     };
   },
   mounted() {
-    const context = require.context('../assets/images/gallery', false, /\.(png|jpe?g|svg)$/);
+    const context = require.context('../assets/images/gallery', true, /\.(png|jpe?g|svg)$/);
     context.keys().map((item) => { //eslint-disable-line
       this.images.push(context(item)); //eslint-disable-line
     });
@@ -26,13 +26,21 @@ export default {
 
 .photosWrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-gap: 20px;
   height: 100%;
   width: 100%;
+  padding: 15px;
+  max-height: 500px;
+  overflow: auto;
 
   .image {
     width: 100%;
+    box-shadow: 0 0 15px -5px $blue-darker;
+  }
+
+  @media #{$mq-small} {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 </style>

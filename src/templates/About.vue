@@ -23,6 +23,7 @@
     </div>
     <div id="about-right" class="about-half">
       <section-title theme="dark">Galeria prac</section-title>
+      Możesz przewijać w dół przez zdjęcia
       <images />
     </div>
   </div>
