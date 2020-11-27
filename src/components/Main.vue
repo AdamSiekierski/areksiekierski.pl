@@ -1,13 +1,13 @@
 <template>
-  <div id="main">
+  <main id="main">
     <navigation />
     <social-menu />
     <slot></slot>
-  </div>
+  </main>
 </template>
 <script>
-import Nav from '../components/Nav.vue';
-import SocialMenu from '../components/SocialMenu.vue';
+import Nav from './Nav.vue';
+import SocialMenu from './SocialMenu.vue';
 
 export default {
   name: 'main-template',
@@ -17,5 +17,4 @@ export default {
   },
 };
 </script>
-<style lang="scss" src="../assets/styles/GlobalStyles.scss">
-</style>
+<style lang="scss" src="../assets/styles/GlobalStyles.scss"></style>

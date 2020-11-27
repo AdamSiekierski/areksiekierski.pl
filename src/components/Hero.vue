@@ -5,6 +5,7 @@
         Usługi <br />
         Remontowe <br />
         Arkadiusz Siekierski <br />
+        <span class="green">Poznań</span>
       </h1>
     </div>
     <div id="heroImageWrapper">
@@ -30,7 +31,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 40%;
+    width: 45%;
     height: 100vh;
 
     #heroImage {
@@ -41,10 +42,14 @@ export default {
   #titleWrapper {
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 55%;
     height: 100vh;
     color: $blue-darker;
     padding-left: 50px;
+
+    .green {
+      color: $green-lighter;
+    }
 
     h1 {
       font-size: 4em;

@@ -1,8 +1,13 @@
+<!-- eslint-disable max-len -->
 <template>
   <div id="socialMenuWrapper">
-    <a href="https://facebook.com">
+    <a href="https://facebook.com/areksiekierskiremonty">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.874 13.749" class="icon">
-        <path d="M7.719,4.583H6V6.874H7.719v6.874h2.864V6.874h2.086l.205-2.291H10.583V3.628c0-.547.11-.764.639-.764h1.653V0H10.693C8.633,0,7.719.907,7.719,2.644Z" transform="translate(-6 0)"></path><!-- eslint-disable-line -->
+        <path
+          d="M7.719,4.583H6V6.874H7.719v6.874h2.864V6.874h2.086l.205-2.291H10.583V3.628c0-.547.11-.764.639-.764h1.653V0H10.693C8.633,0,7.719.907,7.719,2.644Z"
+          transform="translate(-6 0)"
+        ></path>
+        <!-- eslint-disable-line -->
       </svg>
     </a>
   </div>

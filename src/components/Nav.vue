@@ -1,20 +1,23 @@
 <template>
-  <div id="nav">
-    <div id="navImageWrapper" class="navHalf">
-      <img src="../assets/images/logo.png"
-           id="navImage"
-           alt="Usługi Remontowe Arkadiusz Siekierski"/>
-    </div>
-    <div class="navLinksWrapper" :class="isMenuOpened && 'navLinksOpened'">
+  <nav id="nav">
+    <section class="navHalf navImageWrapper">
+      <img
+        src="../assets/images/logo.png"
+        class="navImage"
+        alt="Usługi Remontowe Arkadiusz Siekierski"
+        v-scroll-to="'#hero'"
+      />
+    </section>
+    <section class="navLinksWrapper" :class="isMenuOpened && 'navLinksOpened'">
       <a href="#" v-scroll-to="'#hero'">home</a>
-      <a href="#" v-scroll-to="'#about-left'">oferta</a>
-      <a href="#" v-scroll-to="'#about-right'">galeria</a>
+      <a href="#" v-scroll-to="'#about-text'">oferta</a>
+      <a href="#" v-scroll-to="'#about-gallery'">galeria</a>
       <a href="#">kontakt</a>
+    </section>
+    <div class="hamburgerWrapper">
+      <hamburger @clicked="hamburgerHandler" />
     </div>
-    <div id="hamburgerWrapper">
-      <hamburger @clicked="hamburgerHandler"/>
-    </div>
-  </div>
+  </nav>
 </template>
 <script>
 import Hamburger from './Hamburger.vue';
@@ -40,7 +43,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../assets/styles/Theme";
+@import '../assets/styles/Theme';
 
 #nav {
   position: absolute;
@@ -65,18 +68,23 @@ export default {
     }
   }
 
-  .navLinksWrapper, #navImageWrapper {
+  .navLinksWrapper,
+  .navImageWrapper {
     height: 100%;
     width: 50vw;
     display: flex;
     align-items: center;
   }
 
-  #navImageWrapper {
-    #navImage {
+  .navImageWrapper {
+    .navImage {
       height: 90px;
       width: 90px;
       background-color: $blue-darker;
+
+      @media #{$mq-mobile} {
+        cursor: pointer;
+      }
     }
   }
 
@@ -85,7 +93,7 @@ export default {
     justify-content: flex-end;
   }
 
-  #hamburgerWrapper {
+  .hamburgerWrapper {
     height: 100%;
     display: none;
     align-items: center;
@@ -93,10 +101,6 @@ export default {
   }
 
   @media #{$mq-mobile} {
-    opacity: 1;
-    position: fixed;
-    background-color: $blue-darker;
-
     .navLinksWrapper {
       position: fixed;
       background-color: $green-lighter;
@@ -117,7 +121,7 @@ export default {
       transform: translateX(0);
     }
 
-    #hamburgerWrapper {
+    .hamburgerWrapper {
       display: flex;
     }
   }

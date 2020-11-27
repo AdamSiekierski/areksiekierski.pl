@@ -1,20 +1,16 @@
 <template>
-  <main-template>
-    <hero />
-    <about />
-  </main-template>
+  <Main>
+    <Hero />
+    <About />
+  </Main>
 </template>
 <script>
-import MainTemplate from './templates/MainTemplate.vue';
-import Hero from './templates/Hero.vue';
-import About from './templates/About.vue';
+import Main from './components/Main.vue';
+import Hero from './components/Hero.vue';
+import About from './components/About.vue';
 
 export default {
-  name: 'app',
-  components: {
-    'main-template': MainTemplate,
-    hero: Hero,
-    about: About,
-  },
+  name: 'App',
+  components: { Main, Hero, About },
 };
 </script>
