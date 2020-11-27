@@ -12,9 +12,9 @@
       <a href="#" v-scroll-to="'#hero'">home</a>
       <a href="#" v-scroll-to="'#about-text'">oferta</a>
       <a href="#" v-scroll-to="'#about-gallery'">galeria</a>
-      <a href="#">kontakt</a>
+      <a href="#" v-scroll-to="'#contact'">kontakt</a>
     </section>
-    <div class="hamburgerWrapper">
+    <div class="hamburgerWrapper" :style="isMenuOpened && { position: 'fixed' }">
       <hamburger @clicked="hamburgerHandler" />
     </div>
   </nav>
@@ -94,10 +94,11 @@ export default {
   }
 
   .hamburgerWrapper {
-    height: 100%;
     display: none;
     align-items: center;
-    margin-right: 10px;
+    right: 20px;
+    height: 80px;
+    position: absolute;
   }
 
   @media #{$mq-mobile} {

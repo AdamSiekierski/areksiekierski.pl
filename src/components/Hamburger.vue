@@ -1,16 +1,31 @@
 <template>
   <button id="outerHamburger" @click="this.handleClick">
-    <div id="hamburger" :style="this.isMenuOpened && {
-      backgroundColor: `transparent`
-    }">
-      <div class="before" :style="this.isMenuOpened && {
-        transform: `rotate(45deg)`,
-        top: '0'
-      }"></div>
-      <div class="after" :style="this.isMenuOpened && {
-        transform: `rotate(-45deg)`,
-        top: '0'
-      }"></div>
+    <div
+      id="hamburger"
+      :style="
+        this.isMenuOpened && {
+          backgroundColor: `transparent`,
+        }
+      "
+    >
+      <div
+        class="before"
+        :style="
+          this.isMenuOpened && {
+            transform: `rotate(45deg)`,
+            top: '0',
+          }
+        "
+      ></div>
+      <div
+        class="after"
+        :style="
+          this.isMenuOpened && {
+            transform: `rotate(-45deg)`,
+            top: '0',
+          }
+        "
+      ></div>
     </div>
   </button>
 </template>
@@ -38,7 +53,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../assets/styles/Theme.scss";
+@import '../assets/styles/Theme.scss';
 
 #outerHamburger {
   height: 30px;
@@ -57,7 +72,8 @@ export default {
     position: relative;
     transition: all 0.3s ease-in-out;
 
-    .before, .after {
+    .before,
+    .after {
       width: 30px;
       height: 3px;
       content: '';
