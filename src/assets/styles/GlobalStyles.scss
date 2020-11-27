@@ -1,0 +1,13 @@
+@import "Theme.scss";
+
+*, *::before, *::after {
+  font-family: $font-slabo;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: $green-lighter;
+  color: $blue-darker;
+}
