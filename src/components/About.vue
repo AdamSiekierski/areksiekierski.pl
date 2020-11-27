@@ -23,7 +23,7 @@
       </ul>
     </section>
     <section id="about-gallery" class="about-half">
-      <SectionTitle theme="dark">Galeria prac</SectionTitle>
+      <SectionTitle theme="dark">Galeria</SectionTitle>
       <Images />
     </section>
   </div>
@@ -83,6 +83,7 @@ export default {
 
     #about-text {
       background: $blue;
+      font-size: 1.2em;
     }
   }
 

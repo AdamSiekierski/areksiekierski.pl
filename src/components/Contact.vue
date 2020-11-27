@@ -41,6 +41,8 @@ export default {
   h2 {
     font-size: 2.5em;
     text-decoration: underline;
+    margin-bottom: 10px;
+    word-break: break-all;
   }
 
   @media #{$mq-small} {

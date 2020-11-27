@@ -1,7 +1,7 @@
 <template>
   <div class="photosWrapper">
     <div class="photosContainer" :style="{ columnCount: columns }">
-      <img :src="item" class="image" v-for="(item, key) in images" :key="key" />
+      <img :src="item" class="image" v-for="(item, key) in images" :key="key" loading="lazy" />
     </div>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
       } else {
         const width = window.innerWidth / 2;
 
-        this.columns = Math.floor(width / 350);
+        this.columns = Math.floor(width / 300);
       }
     },
   },
