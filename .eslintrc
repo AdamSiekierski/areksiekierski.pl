@@ -18,5 +18,5 @@
   },
   "parserOptions": {
     "parser": "babel-eslint"
-  },
+  }
 }

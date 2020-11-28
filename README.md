@@ -1,29 +1,7 @@
-# areksiekierski.pl
+# [areksiekierski.pl](https://areksiekierski.pl)
 
-## Project setup
-```
-yarn install
-```
+This is a simple landing page made with Vue.js 2 for my father's business.
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+Most of the codebase is quite legacy, because it was made about two years ago.
 
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+The website is deployed on a traditional hosting (LAMP), on cyberfolks.pl - we wanted to have a complex support and an email address.
