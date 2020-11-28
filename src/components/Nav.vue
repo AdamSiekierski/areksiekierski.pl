@@ -1,21 +1,20 @@
 <template>
-  <nav id="nav">
-    <section class="navHalf navImageWrapper">
-      <img
-        src="../assets/images/logo.png"
-        class="navImage"
-        alt="Usługi Remontowe Arkadiusz Siekierski"
-        v-scroll-to="'#hero'"
-      />
+  <nav
+    class="nav"
+    :class="isMenuOpened && 'nav--opened'"
+    :style="{ height, opacity: isScrollingMobile ? 0.99 : 1 }"
+  >
+    <section class="navImageWrapper" :style="{ padding: isScrollingMobile ? '2px' : '10px' }">
+      <img src="../assets/images/logo.png" class="navImage" alt="" v-scroll-to="'#hero'" />
     </section>
-    <section class="navLinksWrapper" :class="isMenuOpened && 'navLinksOpened'">
+    <section class="navLinksWrapper">
       <a href="#" v-scroll-to="'#hero'">home</a>
-      <a href="#" v-scroll-to="'#about-text'">oferta</a>
+      <a href="#" v-scroll-to="'#about-offer'">oferta</a>
       <a href="#" v-scroll-to="'#about-gallery'">galeria</a>
       <a href="#" v-scroll-to="'#contact'">kontakt</a>
     </section>
-    <div class="hamburgerWrapper" :style="isMenuOpened && { position: 'fixed' }">
-      <hamburger @clicked="hamburgerHandler" />
+    <div class="hamburgerWrapper" :style="{ height }">
+      <Hamburger @clicked="hamburgerHandler" />
     </div>
   </nav>
 </template>
@@ -26,12 +25,13 @@ export default {
   name: 'Nav',
 
   components: {
-    hamburger: Hamburger,
+    Hamburger,
   },
 
   data() {
     return {
       isMenuOpened: false,
+      height: '100px',
     };
   },
 
@@ -39,23 +39,44 @@ export default {
     hamburgerHandler(e) {
       this.isMenuOpened = e === 'open';
     },
+    handleScroll() {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        window.requestAnimationFrame(() => {
+          this.height = window.scrollY === 0 ? '100px' : '50px';
+        });
+      }
+    },
+  },
+
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+
+  computed: {
+    isScrollingMobile() {
+      return this.height !== '100px';
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
 @import '../assets/styles/Theme';
 
-#nav {
+.nav {
   position: absolute;
-  height: 100px;
   width: 100%;
-  padding: 5px;
   display: flex;
   justify-content: space-between;
   font-size: 1.5em;
   color: $white;
-  opacity: 0.99;
   z-index: 2;
+  transition: height 0.2s ease-in-out;
+  top: 0;
+  left: 0;
 
   a {
     text-decoration: none;
@@ -77,9 +98,10 @@ export default {
   }
 
   .navImageWrapper {
+    transition: padding 0.2s ease-in-out;
+
     .navImage {
-      height: 90px;
-      width: 90px;
+      height: 100%;
       background-color: $blue-darker;
 
       @media #{$mq-mobile} {
@@ -97,11 +119,14 @@ export default {
     display: none;
     align-items: center;
     right: 20px;
-    height: 80px;
     position: absolute;
+    transition: height 0.3s ease-in-out;
   }
 
   @media #{$mq-mobile} {
+    position: fixed;
+    background-color: $blue-darker;
+
     .navLinksWrapper {
       position: fixed;
       background-color: $green-lighter;
@@ -118,8 +143,14 @@ export default {
       opacity: 0.98;
     }
 
-    .navLinksOpened {
-      transform: translateX(0);
+    &--opened {
+      .navLinksWrapper {
+        transform: translateX(0);
+      }
+
+      .hamburgerWrapper {
+        position: fixed;
+      }
     }
 
     .hamburgerWrapper {

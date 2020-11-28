@@ -1,13 +1,16 @@
 <template>
   <div class="photosWrapper">
     <div class="photosContainer" :style="{ columnCount: columns }">
-      <img :src="item" class="image" v-for="(item, key) in images" :key="key" loading="lazy" />
+      <GalleryImage :src="item" v-for="(item, key) in images" :key="key" alt="" />
     </div>
   </div>
 </template>
 <script>
+import GalleryImage from './GalleryImage.vue';
+
 export default {
-  name: 'images',
+  components: { GalleryImage },
+  name: 'Gallery',
   data() {
     return {
       images: [],
@@ -25,7 +28,7 @@ export default {
       if (window.matchMedia('(max-width: 1024px)').matches) {
         const width = window.innerWidth;
 
-        this.columns = Math.floor(width / 250);
+        this.columns = Math.floor(width / 200);
       } else {
         const width = window.innerWidth / 2;
 
@@ -63,12 +66,6 @@ export default {
   &::-webkit-scrollbar-thumb {
     background-color: $blue-lighter;
     cursor: pointer;
-  }
-
-  .image {
-    width: 100%;
-    display: block;
-    margin: 5px 0;
   }
 }
 </style>

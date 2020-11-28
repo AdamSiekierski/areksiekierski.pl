@@ -25,7 +25,7 @@ export default {
 @import '../assets/styles/Theme.scss';
 
 #contact {
-  padding: 20px;
+  padding: 30px 20px;
   background-color: $blue-darker;
   color: white;
 }

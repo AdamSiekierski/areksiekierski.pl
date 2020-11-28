@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <section id="about-text" class="about-half">
+    <section id="about-offer" class="about-half">
       <SectionTitle theme="light">
         Oferta
       </SectionTitle>
@@ -24,20 +24,20 @@
     </section>
     <section id="about-gallery" class="about-half">
       <SectionTitle theme="dark">Galeria</SectionTitle>
-      <Images />
+      <Gallery />
     </section>
   </div>
 </template>
 <script>
 import SectionTitle from './SectionTitle.vue';
-import Images from './Images.vue';
+import Gallery from './Gallery.vue';
 
 export default {
   name: 'about',
 
   components: {
     SectionTitle,
-    Images,
+    Gallery,
   },
 };
 </script>
@@ -53,9 +53,9 @@ export default {
     flex: 1;
   }
 
-  #about-text {
+  #about-offer {
     background-color: $blue;
-    padding: 20px;
+    padding: 30px 20px;
     color: $white;
     font-size: 1.5em;
   }
@@ -64,7 +64,7 @@ export default {
     background-color: $white;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 30px 10px;
     height: 100vh;
   }
 
@@ -81,7 +81,7 @@ export default {
     flex-direction: column;
     max-height: unset;
 
-    #about-text {
+    #about-offer {
       background: $blue;
       font-size: 1.2em;
     }
