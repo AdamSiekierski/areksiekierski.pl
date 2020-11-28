@@ -1,7 +1,7 @@
 <template>
   <fragment>
     <transition name="fade">
-      <div class="modal" :class="opened && 'modal--opened'" v-if="opened" @click="handleModalClick">
+      <div class="modal" :class="opened && 'modal--opened'" v-if="opened" @click="opened = false">
         <button class="modal__close-button" v-if="opened" @click="opened = false">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,13 +36,6 @@ export default {
     return {
       opened: false,
     };
-  },
-  methods: {
-    handleModalClick(e) {
-      if (!e.target.className === 'modal__image') {
-        this.opened = false;
-      }
-    },
   },
 };
 </script>
