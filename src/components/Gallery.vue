@@ -1,6 +1,6 @@
 <template>
   <div class="photosWrapper">
-    <div class="photosContainer" :style="{ columnCount: columns }">
+    <div class="photosContainer">
       <GalleryImage :src="item" v-for="(item, key) in images" :key="key" alt="" />
     </div>
   </div>
@@ -18,23 +18,10 @@ export default {
     };
   },
   mounted() {
-    const context = require.context('../assets/images/gallery', true, /\.(jpg)$/);
+    const context = require.context('../assets/images/gallery', true, /\.(jpg)|(jpeg)$/);
     context.keys().map((item) => {
       this.images.push(context(item)); //eslint-disable-line
     });
-  },
-  methods: {
-    countColumns() {
-      if (window.matchMedia('(max-width: 1024px)').matches) {
-        const width = window.innerWidth;
-
-        this.columns = Math.floor(width / 200);
-      } else {
-        const width = window.innerWidth / 2;
-
-        this.columns = Math.floor(width / 300);
-      }
-    },
   },
   created() {
     this.countColumns();
@@ -55,6 +42,13 @@ export default {
 
   .photosContainer {
     column-gap: 5px;
+    white-space: nowrap;
+    column-count: auto;
+    column-width: 150px;
+
+    @media #{$mq-small} {
+      column-width: 100px;
+    }
   }
 
   &::-webkit-scrollbar {
@@ -66,6 +60,10 @@ export default {
   &::-webkit-scrollbar-thumb {
     background-color: $blue-lighter;
     cursor: pointer;
+  }
+
+  @media #{$mq-small} {
+    overflow: hidden;
   }
 }
 </style>

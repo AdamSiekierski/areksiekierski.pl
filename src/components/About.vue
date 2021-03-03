@@ -66,6 +66,10 @@ export default {
     flex-direction: column;
     padding: 30px 10px;
     height: 100vh;
+
+    @media #{$mq-small} {
+      height: 100%;
+    }
   }
 
   ul {
